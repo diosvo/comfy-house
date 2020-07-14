@@ -1,0 +1,23 @@
+@import '../scss/main.scss';
+
+nav {
+    position: sticky;
+    top     : 0;
+    left    : 0;
+    z-index: 10000;
+    background-color: rgba($color: #000000, $alpha: 0.9);
+
+    .nav-icon,
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .logo {
+        letter-spacing: 2px;
+        margin        : auto;
+
+        .logo__primary {
+            color: var(--primaryColor);
+        }
+    }
+}

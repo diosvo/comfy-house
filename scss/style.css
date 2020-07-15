@@ -25,9 +25,45 @@ nav {
   background-color: rgba(0, 0, 0, 0.9); }
   nav .nav-icon,
   nav .logo {
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    cursor: pointer; }
   nav .logo {
     letter-spacing: 2px;
     margin: auto; }
     nav .logo .logo__primary {
       color: var(--primaryColor); }
+  nav .cart-btn {
+    position: relative; }
+  nav .cart--items {
+    position: absolute;
+    top: -.1rem;
+    right: -.8rem;
+    border-radius: 50%;
+    background-color: var(--primaryColor);
+    font-size: 12px;
+    padding: 0 0.4rem; }
+
+header {
+  min-height: calc(100vh - 40px);
+  background: url(../images/header.jpg) center/cover no-repeat; }
+  header .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 3rem 4rem; }
+    header .banner .banner-btn {
+      font-family: "Lato", sans-serif;
+      letter-spacing: var(--mainSpacing);
+      font-size: 14px;
+      background-color: var(--primaryColor);
+      border: none;
+      outline: none;
+      padding: 0.5rem 1rem; }
+      header .banner .banner-btn:hover {
+        background-color: var(--mainWhite);
+        color: var(--primaryColor);
+        border: 1px solid var(--primaryColor);
+        transition: var(--mainTransition);
+        cursor: pointer; }

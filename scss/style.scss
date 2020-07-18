@@ -8,8 +8,9 @@ nav {
     background-color: rgba($color: #000000, $alpha: 0.9);
 
     .col-sm-3 {
-        width:0;
+        width: 0;
     }
+
     .nav-icon,
     .logo {
         font-size: 1.25rem;
@@ -120,7 +121,8 @@ section.products {
         }
     }
 
-    h5, h6 {
+    h5,
+    h6 {
         text-transform: capitalize;
         font-size     : 1rem;
         letter-spacing: var(--mainSpacing);
@@ -132,5 +134,126 @@ section.products {
     h6 {
         color: var(--primaryColor);
     }
+}
 
+section.cart-overlay {
+    position: fixed;
+    top     : 0;
+    right   : 0;
+
+    width  : 100%;
+    height : 100%;
+    z-index: 2;
+
+    transition: var(--mainTransition);
+    background: rgba(240, 157, 81, 0.5);
+
+    // visibility: hidden;
+
+    .close-cart {
+        font-size: 1.7rem;
+        cursor   : pointer;
+    }
+
+    .cart {
+        position: fixed;
+        top     : 0;
+        right   : 0;
+
+        width   : 100%;
+        height  : 100%;
+        overflow-y: scroll;
+
+        z-index: 3;
+        padding: 2.5rem;
+
+        background  : rgb(231, 226, 221);
+        transition  : var(--mainTransition);
+        // transform: translateX(100%);
+
+        h5 {
+            text-transform: capitalize;
+            text-align    : center;
+
+            letter-spacing: var(--mainSpacing);
+            margin-bottom : 2rem;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .cart {
+            width    : 30vw;
+            min-width: 450px;
+        }
+    }
+
+    .cart-content {
+        .cart-item {
+            display              : grid;
+            grid-template-columns: auto 1fr auto;
+            grid-column-gap      : 1.5rem;
+
+            align-items          : center;
+            margin: 1.5rem 0;
+
+            img {
+                width : 6rem;
+                height: 6rem;
+            }
+
+            .item--detail {
+                .item--name {
+                    text-transform: capitalize;
+                    letter-spacing: var(--mainSpacing);
+                }
+
+                h6 {
+                    color         : var(--primaryColor);
+                    margin        : 0.5rem 0;
+                    letter-spacing: var(--mainSpacing);
+                }
+
+                .remove--item {
+                    font-size: 0.85rem;
+                    color    : grey;
+                    cursor   : pointer;
+                }
+            }
+
+            .item--qty {
+                .fa-chevron-up,
+                .fa-chevron-down {
+                    color : var(--primaryColor);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .cart-footer {
+        margin-top    : 2rem;
+        letter-spacing: var(--mainSpacing);
+
+        h6 {
+            text-transform: capitalize;
+            margin-bottom : 1rem;
+        }
+
+        .clear-btn {
+            background-color: var(--primaryColor);
+            letter-spacing: var(--mainSpacing);
+            &:hover {
+                color: var(--mainWhite);
+            }
+        }
+    }
+
+}
+
+footer {
+    background-color: rgba($color: #000000, $alpha: 0.8);
+
+    span {
+        color: var(--primaryColor);
+    }
 }

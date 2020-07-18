@@ -17,12 +17,24 @@ body {
   background: var(--mainWhite);
   font-family: "Lato", sans-serif; }
 
+button {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem; }
+  button:hover {
+    transition: var(--mainTransition);
+    cursor: pointer; }
+
 nav {
   position: sticky;
   top: 0;
   left: 0;
   z-index: 10000;
   background-color: rgba(0, 0, 0, 0.9); }
+  nav .col-sm-3 {
+    width: 0; }
   nav .nav-icon,
   nav .logo {
     font-size: 1.25rem;
@@ -37,7 +49,7 @@ nav {
   nav .cart--items {
     position: absolute;
     top: -.1rem;
-    right: -.8rem;
+    right: .25rem;
     border-radius: 50%;
     background-color: var(--primaryColor);
     font-size: 12px;
@@ -54,16 +66,49 @@ header {
     background: rgba(255, 255, 255, 0.7);
     padding: 3rem 4rem; }
     header .banner .banner-btn {
-      font-family: "Lato", sans-serif;
       letter-spacing: var(--mainSpacing);
-      font-size: 14px;
-      background-color: var(--primaryColor);
-      border: none;
-      outline: none;
-      padding: 0.5rem 1rem; }
+      background-color: var(--primaryColor); }
       header .banner .banner-btn:hover {
         background-color: var(--mainWhite);
         color: var(--primaryColor);
-        border: 1px solid var(--primaryColor);
-        transition: var(--mainTransition);
-        cursor: pointer; }
+        border: 1px solid var(--primaryColor); }
+
+section.products .product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2rem;
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto; }
+  section.products .product-list .product-img-container {
+    position: relative;
+    overflow: hidden; }
+    section.products .product-list .product-img-container img.product-img {
+      display: block;
+      width: 100%;
+      min-height: 12rem;
+      transition: var(--mainTransition); }
+    section.products .product-list .product-img-container .bag-btn {
+      position: absolute;
+      top: 60%;
+      right: 0;
+      background: var(--primaryColor);
+      border: none;
+      letter-spacing: var(--mainSpacing);
+      transition: var(--mainTransition);
+      transform: translateX(101%); }
+      section.products .product-list .product-img-container .bag-btn:hover {
+        color: var(--mainWhite); }
+    section.products .product-list .product-img-container:hover img.product-img {
+      opacity: 0.7; }
+    section.products .product-list .product-img-container:hover .bag-btn {
+      transform: translateX(0); }
+section.products h5, section.products h6 {
+  text-transform: capitalize;
+  font-size: 1rem;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+  margin-top: .5rem; }
+section.products h6 {
+  color: var(--primaryColor); }

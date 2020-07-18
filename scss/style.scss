@@ -7,6 +7,9 @@ nav {
     z-index         : 10000;
     background-color: rgba($color: #000000, $alpha: 0.9);
 
+    .col-sm-3 {
+        width:0;
+    }
     .nav-icon,
     .logo {
         font-size: 1.25rem;
@@ -29,7 +32,7 @@ nav {
     .cart--items {
         position: absolute;
         top     : -.1rem;
-        right   : -.8rem;
+        right   : .25rem;
 
         border-radius   : 50%;
         background-color: var(--primaryColor);
@@ -41,34 +44,93 @@ nav {
 
 header {
     min-height: calc(100vh - 40px);
+
     background: url(../images/header.jpg) center/cover no-repeat;
+
     .banner {
-        display: flex;
-        flex-direction: column;
+        display        : flex;
+        flex-direction : column;
         justify-content: space-around;
-        align-items: center;
+        align-items    : center;
 
         background: rgba(255, 255, 255, 0.7);
-        padding: 3rem 4rem;
+        padding   : 3rem 4rem;
 
         .banner-btn {
-            font-family: "Lato", sans-serif;
-            letter-spacing: var(--mainSpacing);
-            font-size: 14px;
-
+            letter-spacing  : var(--mainSpacing);
             background-color: var(--primaryColor);
-            border: none;
 
-            outline: none;
-            padding: 0.5rem 1rem;
             &:hover {
                 background-color: var(--mainWhite);
-                color: var(--primaryColor);
-                border: 1px solid var(--primaryColor);
-
-                transition: var(--mainTransition);
-                cursor: pointer;
+                color           : var(--primaryColor);
+                border          : 1px solid var(--primaryColor);
             }
         }
     }
+}
+
+section.products {
+    .product-list {
+        display              : grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-column-gap      : 1.5rem;
+        grid-row-gap         : 2rem;
+
+        width    : 90vw;
+        max-width: 1170px;
+
+        margin: 0 auto;
+
+        .product-img-container {
+            position: relative;
+            overflow: hidden;
+
+            img.product-img {
+                display   : block;
+                width     : 100%;
+                min-height: 12rem;
+                transition: var(--mainTransition);
+            }
+
+            .bag-btn {
+                position: absolute;
+                top     : 60%;
+                right   : 0;
+
+                background: var(--primaryColor);
+                border    : none;
+
+                letter-spacing: var(--mainSpacing);
+
+                transition: var(--mainTransition);
+                transform : translateX(101%);
+
+                &:hover {
+                    color: var(--mainWhite);
+                }
+            }
+
+            &:hover img.product-img {
+                opacity: 0.7;
+            }
+
+            &:hover .bag-btn {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    h5, h6 {
+        text-transform: capitalize;
+        font-size     : 1rem;
+        letter-spacing: var(--mainSpacing);
+        text-align    : center;
+
+        margin-top: .5rem;
+    }
+
+    h6 {
+        color: var(--primaryColor);
+    }
+
 }

@@ -16,3 +16,13 @@ body {
   color: var(--mainBlack);
   background: var(--mainWhite);
   font-family: "Lato", sans-serif; }
+
+button {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem; }
+  button:hover {
+    transition: var(--mainTransition);
+    cursor: pointer; }
